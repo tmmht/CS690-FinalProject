@@ -1,0 +1,15 @@
+/Users/tomomihatasa/Desktop/Ball-State/690/CS690-FinalProject/SkillHabit/bin/Debug/net8.0/SkillHabit
+/Users/tomomihatasa/Desktop/Ball-State/690/CS690-FinalProject/SkillHabit/bin/Debug/net8.0/SkillHabit.deps.json
+/Users/tomomihatasa/Desktop/Ball-State/690/CS690-FinalProject/SkillHabit/bin/Debug/net8.0/SkillHabit.runtimeconfig.json
+/Users/tomomihatasa/Desktop/Ball-State/690/CS690-FinalProject/SkillHabit/bin/Debug/net8.0/SkillHabit.dll
+/Users/tomomihatasa/Desktop/Ball-State/690/CS690-FinalProject/SkillHabit/bin/Debug/net8.0/SkillHabit.pdb
+/Users/tomomihatasa/Desktop/Ball-State/690/CS690-FinalProject/SkillHabit/obj/Debug/net8.0/SkillHabit.GeneratedMSBuildEditorConfig.editorconfig
+/Users/tomomihatasa/Desktop/Ball-State/690/CS690-FinalProject/SkillHabit/obj/Debug/net8.0/SkillHabit.AssemblyInfoInputs.cache
+/Users/tomomihatasa/Desktop/Ball-State/690/CS690-FinalProject/SkillHabit/obj/Debug/net8.0/SkillHabit.AssemblyInfo.cs
+/Users/tomomihatasa/Desktop/Ball-State/690/CS690-FinalProject/SkillHabit/obj/Debug/net8.0/SkillHabit.csproj.CoreCompileInputs.cache
+/Users/tomomihatasa/Desktop/Ball-State/690/CS690-FinalProject/SkillHabit/obj/Debug/net8.0/SkillHabit.sourcelink.json
+/Users/tomomihatasa/Desktop/Ball-State/690/CS690-FinalProject/SkillHabit/obj/Debug/net8.0/SkillHabit.dll
+/Users/tomomihatasa/Desktop/Ball-State/690/CS690-FinalProject/SkillHabit/obj/Debug/net8.0/refint/SkillHabit.dll
+/Users/tomomihatasa/Desktop/Ball-State/690/CS690-FinalProject/SkillHabit/obj/Debug/net8.0/SkillHabit.pdb
+/Users/tomomihatasa/Desktop/Ball-State/690/CS690-FinalProject/SkillHabit/obj/Debug/net8.0/SkillHabit.genruntimeconfig.cache
+/Users/tomomihatasa/Desktop/Ball-State/690/CS690-FinalProject/SkillHabit/obj/Debug/net8.0/ref/SkillHabit.dll
