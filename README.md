@@ -50,6 +50,7 @@ Select an option: _
 ### Add New Learning Goal
 
 --- Add New Goal ---
+
 - Enter Goal Name (e.g., Vocabulary Practice, Coding Practice): ____________________
 - Enter Category (e.g., Language, Coding): ____________________
 - Frequency (Daily / Weekly): ________________
@@ -62,6 +63,7 @@ Select an option: _
 You can see Your Goals& Progress
 
 --- Your Goals ---
+
 [Vocabulary Practice]
 - Total Completions: 1
 - Current Streak: 1 days
@@ -80,6 +82,7 @@ Press Enter to return to menu.
 ### Mark Goal as Completed
 
 --- Mark Goal as Completed ---
+
 1. Vocabulary Practice (🔥 1-day streak)
 2. Coding Practice (🔥 1-day streak)
 Enter the goal number: _
@@ -90,6 +93,7 @@ Press Enter to return to menu.
 ### View Summary Statistics
 
 --- Your Goals ---
+
 [Vocabulary Practice]
 - Total Completions: 12
 - Current Streak: 6 days
