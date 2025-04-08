@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "Id": "90bf9129-f241-491b-9633-787b42b7f46a",
+    "Name": "Vocabulary Practice",
+    "Category": "Language",
+    "Frequency": "Daily/Weekly",
+    "DurationInDays": 2,
+    "TotalCompletions": 1,
+    "CurrentStreak": 1,
+    "LongestStreak": 1,
+    "CompletionDates": [
+      "2025-04-08T00:00:00+09:00"
+    ]
+  },
+  {
+    "Id": "106bdcb6-5cf9-4c6c-b032-3aebe3560537",
+    "Name": "Coding Practice",
+    "Category": "Coding",
+    "Frequency": "Daily",
+    "DurationInDays": 5,
+    "TotalCompletions": 1,
+    "CurrentStreak": 1,
+    "LongestStreak": 1,
+    "CompletionDates": [
+      "2025-04-08T00:00:00+09:00"
+    ]
+  }
+]
