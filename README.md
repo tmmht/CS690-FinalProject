@@ -47,7 +47,7 @@ dotnet run
 Select an option: _
 
 
-## Add New Learning Goal
+### Add New Learning Goal
 
 --- Add New Goal ---
 - Enter Goal Name (e.g., Vocabulary Practice, Coding Practice): ____________________
@@ -57,7 +57,7 @@ Select an option: _
 
 
 
-## 2. View Goals & Progress
+### View Goals & Progress
 
 You can see Your Goals& Progress
 
@@ -77,7 +77,7 @@ You can see Your Goals& Progress
 Press Enter to return to menu.
 
 
-## Mark Goal as Completed
+### Mark Goal as Completed
 
 --- Mark Goal as Completed ---
 1. Vocabulary Practice (🔥 1-day streak)
@@ -87,7 +87,7 @@ Enter the goal number: _
 You already marked this goal completed today.
 Press Enter to return to menu.
 
-## View Summary Statistics
+### View Summary Statistics
 
 --- Your Goals ---
 [Vocabulary Practice]
@@ -103,7 +103,7 @@ Press Enter to return to menu.
 
 Press Enter to return to menu.
 
-## 5. Exit
+### Exit
 
 Exit app
 
