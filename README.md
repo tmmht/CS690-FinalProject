@@ -14,6 +14,27 @@ It helps users build consistent learning routines by tracking small, manageable 
 - Local data storage (no internet required)
 - Console UI with motivational messages
 
+
+### Features (v2.0.0)
+- Split logic: moved the `Goal` class into a dedicated `Goal.cs` file for clarity and separation of concerns.
+- Simplified `Program.cs` to handle only user interaction logic.
+- Added automated tests using xUnit for the `Goal` class to ensure correctness and reliability.
+- Created a `Tests` project to organize and manage unit tests.
+- Established a clean file structure to support modularity and testing.
+- Added xUnit tests to test the Goal class.
+- Introduced `Tests` project for structured testing.
+
+
+### Project Structure
+```
+CS690-FinalProject/
+├── SkillHabit/
+│   ├── Program.cs       ← Console app (Main UI)
+│   └── Goal.cs          ← Habit goal model
+├── Tests/
+│   ├── Tests.csproj     ← xUnit test project
+│   └── GoalTests.cs     ← Tests for Goal properties and default state
+```
 ---
 
 ## Installation
@@ -27,10 +48,17 @@ git clone https://github.com/tmmht/CS690-FinalProject.git
 cd SkillHabit
 ```
 
-## Run APP
+## Running APP
 
 ```bash
 dotnet run
+```
+
+## Running Tests
+
+```bash
+cd Tests
+dotnet test
 ```
 
 
