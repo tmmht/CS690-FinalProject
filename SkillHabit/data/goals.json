@@ -25,16 +25,5 @@
     "CompletionDates": [
       "2025-04-08T00:00:00+09:00"
     ]
-  },
-  {
-    "Id": "6dc680fb-18ff-4b41-9194-4f2a5ee2a58d",
-    "Name": "stretch",
-    "Category": "exercise",
-    "Frequency": "Daily",
-    "DurationInDays": 14,
-    "TotalCompletions": 0,
-    "CurrentStreak": 0,
-    "LongestStreak": 0,
-    "CompletionDates": []
   }
 ]
