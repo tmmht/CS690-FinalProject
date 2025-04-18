@@ -13,6 +13,7 @@ public class Program
     {
         Directory.CreateDirectory("data");
         LoadGoals();
+        ShowReminders();
         while (true)
         {
             Console.Clear();
@@ -20,8 +21,10 @@ public class Program
             Console.WriteLine("1. Add New Learning Goal");
             Console.WriteLine("2. View Goals & Progress");
             Console.WriteLine("3. Mark Goal as Completed");
-            Console.WriteLine("4. View Summary Statistics");
-            Console.WriteLine("5. Exit");
+            Console.WriteLine("4. Edit Goal");
+            Console.WriteLine("5. Delete Goal");
+            Console.WriteLine("6. View Summary Statistics");
+            Console.WriteLine("7. Exit");
             Console.Write("Select an option: ");
             string choice = Console.ReadLine();
 
@@ -30,8 +33,10 @@ public class Program
                 case "1": AddGoal(); break;
                 case "2": ViewGoals(); break;
                 case "3": MarkGoalCompleted(); break;
-                case "4": ViewSummary(); break;
-                case "5": SaveGoals(); return;
+                case "4": EditGoal(); break;
+                case "5": DeleteGoal(); break;
+                case "6": ViewSummary(); break;
+                case "7": SaveGoals(); return;
                 default: Console.WriteLine("Invalid input. Press Enter."); Console.ReadLine(); break;
             }
         }
@@ -58,11 +63,23 @@ public class Program
         Console.WriteLine("--- Your Goals ---");
         foreach (var goal in goals)
         {
-            Console.WriteLine($"[{goal.Name}]\n- Total Completions: {goal.TotalCompletions}\n- Current Streak: {goal.CurrentStreak} days\n- Longest Streak: {goal.LongestStreak} days\n- Badges: {(goal.CurrentStreak >= 7 ? "🏅 7-Day Streak" : "None")}\n");
+            string badge = goal.CurrentStreak >= 30 ? "🏅 30-Day Streak"
+                        : goal.CurrentStreak >= 7  ? "🏅 7-Day Streak"
+                        : "None";
+
+            int percent = goal.DurationInDays > 0 
+                ? (int)(((double)goal.TotalCompletions / goal.DurationInDays) * 100)
+                : 0;
+            if (percent > 100) percent = 100;
+
+            string bar = new string('█', percent / 10).PadRight(10);
+
+            Console.WriteLine($"[{goal.Name}]\n- Total Completions: {goal.TotalCompletions}\n- Current Streak: {goal.CurrentStreak} days\n- Longest Streak: {goal.LongestStreak} days\n- Badges: {badge}\n- Progress: [{bar}] {percent}%\n");
         }
         Console.WriteLine("Press Enter to return to menu.");
         Console.ReadLine();
     }
+
 
     static void MarkGoalCompleted()
     {
@@ -125,5 +142,80 @@ public class Program
     {
         var json = JsonSerializer.Serialize(goals, new JsonSerializerOptions { WriteIndented = true });
         File.WriteAllText(dataPath, json);
+    }
+
+    static void EditGoal()
+    {
+        Console.Clear();
+        Console.WriteLine("--- Edit Goal ---");
+        for (int i = 0; i < goals.Count; i++)
+            Console.WriteLine($"{i + 1}. {goals[i].Name}");
+
+        Console.Write("Select goal number to edit: ");
+        if (int.TryParse(Console.ReadLine(), out int index) && index > 0 && index <= goals.Count)
+        {
+            var goal = goals[index - 1];
+            Console.Write($"Edit name ({goal.Name}): ");
+            string name = Console.ReadLine();
+            if (!string.IsNullOrWhiteSpace(name)) goal.Name = name;
+
+            Console.Write($"Edit frequency ({goal.Frequency}): ");
+            string freq = Console.ReadLine();
+            if (!string.IsNullOrWhiteSpace(freq)) goal.Frequency = freq;
+
+            Console.Write($"Edit duration ({goal.DurationInDays}): ");
+            if (int.TryParse(Console.ReadLine(), out int dur)) goal.DurationInDays = dur;
+
+            SaveGoals();
+            Console.WriteLine("Goal updated! Press Enter.");
+        }
+        else
+        {
+            Console.WriteLine("Invalid selection.");
+        }
+        Console.ReadLine();
+    }
+
+    static void DeleteGoal()
+    {
+        Console.Clear();
+        Console.WriteLine("--- Delete Goal ---");
+        for (int i = 0; i < goals.Count; i++)
+            Console.WriteLine($"{i + 1}. {goals[i].Name}");
+
+        Console.Write("Select goal number to delete: ");
+        if (int.TryParse(Console.ReadLine(), out int index) && index > 0 && index <= goals.Count)
+        {
+            var goal = goals[index - 1];
+            Console.Write($"Are you sure you want to delete \"{goal.Name}\"? (y/n): ");
+            if (Console.ReadLine()?.ToLower() == "y")
+            {
+                goals.RemoveAt(index - 1);
+                SaveGoals();
+                Console.WriteLine("Goal deleted.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Invalid selection.");
+        }
+        Console.WriteLine("Press Enter to return.");
+        Console.ReadLine();
+    }
+
+    static void ShowReminders()
+    {
+        DateTime today = DateTime.Today;
+        var incompleteGoals = goals.Where(g => !g.CompletionDates.Contains(today)).ToList();
+
+        if (incompleteGoals.Count > 0)
+        {
+            Console.WriteLine("🔔 Reminder: You have goals that haven’t been completed today!");
+            foreach (var g in incompleteGoals)
+            {
+                Console.WriteLine($"- {g.Name} ({g.CurrentStreak}-day streak)");
+            }
+            Console.WriteLine("Keep going! You're doing great!\n");
+        }
     }
 }
